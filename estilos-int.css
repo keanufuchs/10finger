@@ -1,0 +1,480 @@
+.loader {
+    --background: linear-gradient(135deg, #23C4F8, #275EFE);
+    --shadow: rgba(39, 94, 254, 0.28);
+    --text: #6C7486;
+    --page: rgba(255, 255, 255, 0.36);
+    --page-fold: rgba(255, 255, 255, 0.52);
+    --duration: 3s;
+    width: 200px;
+    height: 140px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .loader:before, .loader:after {
+    --r: -6deg;
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    width: 120px;
+    top: 80%;
+    box-shadow: 0 16px 12px var(--shadow);
+    transform: rotate(var(--r));
+  }
+  .loader:before {
+    left: 4px;
+  }
+  .loader:after {
+    --r: 6deg;
+    right: 4px;
+  }
+  .loader div {
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    position: relative;
+    z-index: 1;
+    perspective: 600px;
+    box-shadow: 0 4px 6px var(--shadow);
+    background-image: var(--background);
+  }
+  .loader div ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+  }
+  .loader div ul li {
+    --r: 180deg;
+    --o: 0;
+    --c: var(--page);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transform-origin: 100% 50%;
+    color: var(--c);
+    opacity: var(--o);
+    transform: rotateY(var(--r));
+    -webkit-animation: var(--duration) ease infinite;
+            animation: var(--duration) ease infinite;
+  }
+  .loader div ul li:nth-child(2) {
+    --c: var(--page-fold);
+    -webkit-animation-name: page-2;
+            animation-name: page-2;
+  }
+  .loader div ul li:nth-child(3) {
+    --c: var(--page-fold);
+    -webkit-animation-name: page-3;
+            animation-name: page-3;
+  }
+  .loader div ul li:nth-child(4) {
+    --c: var(--page-fold);
+    -webkit-animation-name: page-4;
+            animation-name: page-4;
+  }
+  .loader div ul li:nth-child(5) {
+    --c: var(--page-fold);
+    -webkit-animation-name: page-5;
+            animation-name: page-5;
+  }
+  .loader div ul li svg {
+    width: 90px;
+    height: 120px;
+    display: block;
+  }
+  .loader div ul li:first-child {
+    --r: 0deg;
+    --o: 1;
+  }
+  .loader div ul li:last-child {
+    --o: 1;
+  }
+  .loader span {
+    display: block;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: 20px;
+    text-align: center;
+    color: var(--text);
+  }
+  
+  @-webkit-keyframes page-2 {
+    0% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    35%, 100% {
+      opacity: 0;
+    }
+    50%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  
+  @keyframes page-2 {
+    0% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    35%, 100% {
+      opacity: 0;
+    }
+    50%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  @-webkit-keyframes page-3 {
+    15% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    35% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+    65%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  @keyframes page-3 {
+    15% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    35% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+    65%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  @-webkit-keyframes page-4 {
+    30% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    65%, 100% {
+      opacity: 0;
+    }
+    80%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  @keyframes page-4 {
+    30% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    65%, 100% {
+      opacity: 0;
+    }
+    80%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  @-webkit-keyframes page-5 {
+    45% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    65% {
+      opacity: 1;
+    }
+    80%, 100% {
+      opacity: 0;
+    }
+    95%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  @keyframes page-5 {
+    45% {
+      transform: rotateY(180deg);
+      opacity: 0;
+    }
+    65% {
+      opacity: 1;
+    }
+    80%, 100% {
+      opacity: 0;
+    }
+    95%, 100% {
+      transform: rotateY(0deg);
+    }
+  }
+  html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  * {
+    box-sizing: inherit;
+  }
+  *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1C212E;
+    font-family: "Roboto", Arial;
+  }
+  body .dribbble {
+    position: fixed;
+    display: block;
+    right: 24px;
+    bottom: 24px;
+  }
+  body .dribbble img {
+    display: block;
+    width: 76px;
+  }
+body{
+    font-family:Arial;
+    font-size:13px;
+    color:#666 
+}
+body{
+    background-color:#FFF;
+    margin-left:0px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px 
+}
+hr{
+    clear:both;
+    border:none 
+}
+h1{
+    font-size:28px 
+}
+img{
+    max-width:100%;
+    height:auto 
+}
+textarea{
+    max-width:100%;
+    height:500px;
+    resize: none;
+    background: transparent;
+    outline: none;
+    border: 0 none;
+    color: darkgrey;
+    font-size: 21px;
+}
+input{
+    margin-bottom:10px;
+    max-width:100% 
+}
+select{
+    margin-bottom:10px 
+}
+a{
+    color:#0A85E0 
+}
+#text_a_escriure{
+    font-family:courier;
+    text-align:left 
+}
+@keyframes blinker {
+    50% {
+      opacity: 
+        30%;
+    }
+  }
+#text_a_escriure .textmarcat{
+    color: black;
+    font-weight:bold;
+    text-decoration:underline;
+    animation: blinker 1s linear infinite;
+}
+#text_a_escriure .textmarcat_no_subr{
+    color:#ff0000;
+    font-weight:bold 
+}
+#cont{
+    margin:auto;
+    width:1080px;
+    display: none;
+}
+#header{
+    display:block;
+    width:100%;
+    padding-top:0px;
+    padding-bottom:5px;
+    height:90px 
+}
+#logo{
+    width:275px;
+    height:60px;
+    padding-top:20px;
+    padding-bottom:10px;
+    padding-left:10px;
+    float:left 
+}
+#logo img{
+    border:none 
+}
+.inlog2{
+    border:0px #5EC2FF;
+    font-size:12px;
+    font-weight:normal;
+    color:#FF0000;
+    width:190px;
+    padding:0px 
+}
+#txthead{
+    width:728px;
+    height:90px;
+    float:right 
+}
+#txthead h1{
+    font-size:50px 
+}
+#contenido{
+    clear:both 
+}
+.contenido{
+    padding:5px;
+    clear:both;
+    color:#686868;
+    font-family:verdana, arial, tahoma;
+    font-size:15px;
+    margin-left:20px;
+    padding-left:10px;
+    margin-right:20px;
+    padding-left:10px;
+    text-align:justify 
+}
+#footer{
+    clear:both;
+    border-top:3px solid #EDEEEF;
+    padding-top:5px;
+    margin-top:5px;
+    font-size:13px;
+    color:#666;
+    text-align:center 
+}
+#bannerpie{
+    clear:both;
+    padding-top:5px;
+    text-align:center;
+    padding-left:65px 
+}
+@media screen and (max-width: 1080px){
+    #txthead h1{
+        font-size:40px;
+        text-decoration:overline 
+   }
+    #derecha{
+        display:none 
+   }
+    #txthead{
+        width:468px;
+        height:60px;
+        float:right;
+        padding-top:15px 
+   }
+    #cont{
+        width:910px;
+        margin:auto 
+   }
+    #bannerpie{
+        padding-left:100px 
+   }
+}
+@media screen and (max-width: 910px){
+    #txthead h1{
+        font-size:30px;
+        text-decoration:line-through 
+   }
+    #cont{
+        width:100%;
+        margin:auto 
+   }
+    #txthead{
+        width:328px;
+        padding-top:20px 
+   }
+    #bannerpie{
+        padding-left:90px 
+   }
+}
+@media screen and (max-width: 600px){
+    #txthead h1{
+        font-size:20px;
+        color:#0f0;
+        text-decoration:underline 
+   }
+    #txthead{
+        display:none 
+   }
+    .txtpie{
+        clear:both;
+        display:block;
+        padding:5px 
+   }
+    #logo{
+        width:auto;
+        height:60px;
+        padding-left:10px;
+        clear:both 
+   }
+    #bannerpie{
+        padding-left:40px 
+   }
+}
+@media screen and (max-width: 400px){
+    #txthead h1{
+        font-size:10px;
+        color:#f00;
+        text-decoration:none 
+   }
+    #txthead{
+        display:none 
+   }
+    #cont{
+        width:100%;
+        margin:auto 
+   }
+    #bannerpie{
+        padding-left:20px 
+   }
+}
+@media screen and (max-width: 359px){
+    #bannerpie{
+        padding-left:10px 
+   }
+}
+@media screen and (max-width: 339px){
+    #bannerpie{
+        padding-left:0px 
+   }
+}
+@media screen and (max-width: 319px){
+    #bannerpie{
+        display:none 
+   }
+}
