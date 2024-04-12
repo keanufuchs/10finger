@@ -1,6 +1,6 @@
 # Wikipedia Typing Practice
 
-Welcome to the Wikipedia Typing Practice repository! This project hosts a simple HTML page that helps users practice typing. It utilizes the Wikipedia API to fetch articles, and users can improve their typing skills by transcribing the text.
+Welcome to the Wikipedia Typing Practice repository, housed in the "10finger" repo! This project hosts a simple HTML page that helps users practice typing. It utilizes the Wikipedia API to fetch articles, and users can improve their typing skills by transcribing the text.
 
 ## Features
 
@@ -19,5 +19,18 @@ To get started with this typing practice tool, simply clone this repository to y
 ### Running the Application
 
 1. Clone the repository:
-   ```bash
+```bash
    git clone https://github.com/keanufuchs/10finger
+```
+
+2. Navigate to the cloned directory:
+```bash
+    cd 10finger
+```
+
+3. Open the index.html file in your web browser.
+
+## Disclaimer
+
+Some of the code used in this application was obtained from third-party sources and is not originally authored by me. I do not claim any ownership over such external content, and all rights belong to their respective owners.
+
